@@ -5,7 +5,7 @@ const Nav = () => {
   return (
     <div className="main_nav flex p-5">
       <div className="nav_left_panel flex-grow">
-        <Link href="/" className="nav_group font-bold text-xl">
+        <Link href="/" className="nav_group font-bold text-xl text-blueGrey-900">
           Mock Market
         </Link>
       </div>

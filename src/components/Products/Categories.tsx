@@ -1,9 +1,27 @@
-import React from 'react'
+import { getCategories } from "@/app/lib/ProductActions";
+import React, { useEffect, useState } from "react";
 
 const Categories = () => {
-  return (
-    <div className="font-bold">PRODUCT CATEGORIES</div>
-  )
-}
+  const [categories, setCategories] = useState([""]);
 
-export default Categories
+  useEffect(() => {
+    const getCategoryList = async () => {
+      const data: string[] = await getCategories();
+      setCategories(data);
+    };
+
+    getCategoryList();
+  }, []);
+  return (
+    <div className="">
+      <p className="mb-5 text-lg font-extrabold">PRODUCT CATEGORIES</p>
+      {categories.map((category) => (
+        <p className="mb-2 text-blueGrey-600" key={category}>
+          {category.toUpperCase()}
+        </p>
+      ))}
+    </div>
+  );
+};
+
+export default Categories;

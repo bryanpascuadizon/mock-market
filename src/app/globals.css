@@ -17,10 +17,23 @@
 }
 
 body {
-  @apply text-blueGrey-800;
-  font-family: "Arial" !important
+  font-family: "Roboto" !important;
+  font-weight: 600;
+
 }
 
 section {
-  @apply w-full h-full p-5
+  @apply w-full h-full p-8
+}
+
+.product_container {
+  @apply grid grid-cols-4 gap-5
+}
+
+.products_left_panel, .header_left_panel {
+  @apply xl:col-span-1 xs:col-span-4
+}
+
+.products_right_panel, .header_right_panel {
+  @apply xl:col-span-3 xs:col-span-4
 }

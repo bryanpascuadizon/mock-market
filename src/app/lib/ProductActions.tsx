@@ -1,5 +1,18 @@
 import axios from "axios";
 
+/* Get all categories */
+export const getCategories = async () => {
+  try {
+    const { data } = await axios.get(
+      "https://fakestoreapi.com/products/categories"
+    );
+
+    return data;
+  } catch (error) {
+    throw new Error("Failed to get categories");
+  }
+};
+
 /* Get all products*/
 export const getProducts = async () => {
   try {
@@ -7,7 +20,7 @@ export const getProducts = async () => {
 
     return data;
   } catch (error) {
-    throw new Error("Faile to get products");
+    throw new Error("Failed to get products");
   }
 };
 
@@ -19,6 +32,6 @@ export const getProduct = async (productId: number) => {
 
     return data;
   } catch (error) {
-    throw new Error("Faile to get product");
+    throw new Error("Failed to get product");
   }
 };
