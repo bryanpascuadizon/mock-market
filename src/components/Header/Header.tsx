@@ -12,7 +12,7 @@ const Header = () => {
           type="text"
           onChange={onChange}
           placeholder="bags, chairs..."
-          className="border-4 border-black p-2 text-sm w-full"
+          className="border-2 border-black p-2 text-sm w-full"
         />
       </div>
       <div className="header_right_panel flex flex-row-reverse">
@@ -20,11 +20,11 @@ const Header = () => {
           <input
             type="text"
             placeholder="Default Sorting"
-            className="border-4 border-slate-700 p-2 text-sm w-52"
+            className="border-2 border-slate-700 p-2 text-sm w-52"
           />
         </div>
         <div className="results_counter mr-5 self-center text-xs text-blueGrey-600 font-semibold">
-          {`Showing 1 - 16 of 111 results`.toUpperCase()}
+          {`Showing 20 - 20 of 20 results`.toUpperCase()}
         </div>
       </div>
     </div>

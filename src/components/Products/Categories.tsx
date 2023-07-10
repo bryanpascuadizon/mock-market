@@ -1,4 +1,4 @@
-import { getCategories } from "@/app/lib/ProductActions";
+import { getCategories } from "@/lib/ProductActions";
 import React, { useEffect, useState } from "react";
 
 const Categories = () => {

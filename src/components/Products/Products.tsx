@@ -2,10 +2,11 @@
 
 import React, { useEffect, useState } from "react";
 import Categories from "./Categories";
-import { getProduct, getProducts } from "@/app/lib/ProductActions";
+import { getProduct, getProducts } from "@/lib/ProductActions";
 import Image from "next/image";
 import Link from "next/link";
-
+import { useDispatch } from "react-redux";
+import { loadProducts } from "@/utils/reducers/productReducer";
 interface ProductProps {
   id: number;
   category: string;
@@ -21,11 +22,13 @@ interface ProductProps {
 
 const Products = () => {
   const [productList, setProductList] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const getProductList = async () => {
       const data = await getProducts();
       setProductList(data);
+      dispatch(loadProducts);
     };
 
     getProductList();
@@ -38,7 +41,10 @@ const Products = () => {
       </div>
       <div className="products_right_panel h-full grid xxxl:grid-cols-4 xxl:grid-cols-3 xl:grid-cols-2 lg:grid-cols-1 gap-6">
         {productList.map((product: ProductProps) => (
-          <Link href={`/products/${product.category}/${product.id}`} key={product.id}>
+          <Link
+            href={`/products/${product.category}/${product.id}`}
+            key={product.id}
+          >
             <Image
               src={product.image}
               alt=""
